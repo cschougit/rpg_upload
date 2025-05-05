@@ -1,0 +1,11 @@
+How to compile:
+1. qmake-qt5  pokemon_rpg.pro
+2. make
+
+
+How to run:
+1. startxwin (at another cygwin terminal)
+2. export DISPLAY=:0.0
+3. ./pokemon_rpg
+
+
