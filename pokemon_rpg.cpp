@@ -2583,78 +2583,50 @@ void Game::checkInteractions_land() {
     return; 
     }
 
-    int entrycounter = 0;
+    //int entrycounter = 0;
+    //for (QGraphicsPixmapItem* wildpokemon : WildPokemons) {
+    //    QRectF boxRect(wildpokemon->x(), wildpokemon->y(), 40, 40);
+    //    QRectF adjacentRect(boxRect.x(), boxRect.y(), boxRect.width() + 2, boxRect.height() + 2);
+    //           
+    //    if (playerRect.intersects(adjacentRect)) {
+    //        if (!dialogVisible && Encounter_Pokemon==0)
+    //        {
+    //              QString itemName;
+    //             // int rand = qrand() % 3;
+    //             // if (rand == 0) itemName = "Squirtle";
+    //            //  else if (rand == 1) itemName = "Charmander";
+    //            //  else itemName = "Bulbasaur";
 
+    //              itemName = wildpokemonList[entrycounter]->name;
 
-    for (QGraphicsPixmapItem* wildpokemon : WildPokemons) {
-        QRectF boxRect(wildpokemon->x(), wildpokemon->y(), 40, 40);
-        QRectF adjacentRect(boxRect.x(), boxRect.y(), boxRect.width() + 2, boxRect.height() + 2);
-       
-        
-        
-        if (playerRect.intersects(adjacentRect)) {
-            if (!dialogVisible)
-            {
-                  QString itemName;
-                 // int rand = qrand() % 3;
-                 // if (rand == 0) itemName = "Squirtle";
-                //  else if (rand == 1) itemName = "Charmander";
-                //  else itemName = "Bulbasaur";
-
-                  itemName = wildpokemonList[entrycounter]->name;
-
-
-
-
-
-
-
-  //              if (pokemonList.count() >= 4) {
-   //                 showDialog("Cannot get it!\n max. 4 Pokemon!");
-   //                 return;
-   //             }
-
-                  printf("%s(4): Encounter_Pokemon=%d\n", __func__, Encounter_Pokemon);
-                  if (itemName == "Squirtle")   Encounter_Pokemon = 1;
-                  else if (itemName == "Charmander") Encounter_Pokemon = 2;
-                  else if (itemName == "Bulbasaur")  Encounter_Pokemon = 3;
-                  else                               Encounter_Pokemon = 4;
-                  printf("%s(5): Encounter_Pokemon=%d\n", __func__, Encounter_Pokemon);
-                  showDialog("Encounter " + itemName + "!");
-                  printf("%s(6): Encounter_Pokemon=%d\n", __func__, Encounter_Pokemon);
-                  currentScene->removeItem(wildpokemon);
-                  WildPokemons.removeOne(wildpokemon);
-                  delete wildpokemon;
-                  dialogVisible = true;
-                  //Encounter_Pokemon = true;
-                  printf("%s(7): Encounter_Pokemon=%d\n", __func__, Encounter_Pokemon);
-                  // switchScene("battle");
-                //append pokemon into "pokemonList"
-
-   //             Pokemon* pokemon1 = new Pokemon(itemName, 30, 30, 5, 5, 10, 30);
-   //             pokemon1->moves[0] = 0;
-   //             pokemon1->moves[1] = 0;
-   //             pokemon1->moves[2] = 0;
-   //             pokemon1->moves[3] = 0;
-//
- //               pokemonList.append(pokemon1);
-                  return;
-
-            }
-            else {
-                // QGraphicsPixmapItem box = *pixmapItem;
-                hideDialog(); return;
-                //currentScene->removeItem(lab_ball);
-                //Pokeball_Mons.removeOne(lab_ball);
-                //delete lab_ball;
-            }
-            //openYellowBox(box);
-            //return;
-        }
-
-        entrycounter++;
-
-    }
+    //              printf("%s(4): Encounter_Pokemon=%d\n", __func__, Encounter_Pokemon);
+    //              if (itemName == "Squirtle")   Encounter_Pokemon = 1;
+    //              else if (itemName == "Charmander") Encounter_Pokemon = 2;
+    //              else if (itemName == "Bulbasaur")  Encounter_Pokemon = 3;
+    //              else                               Encounter_Pokemon = 4;
+    //              printf("%s(5): Encounter_Pokemon=%d\n", __func__, Encounter_Pokemon);
+    //              showDialog("Encounter " + itemName + "!");
+    //              printf("%s(6): Encounter_Pokemon=%d\n", __func__, Encounter_Pokemon);
+    //              currentScene->removeItem(wildpokemon);
+    //              WildPokemons.removeOne(wildpokemon);
+    //              delete wildpokemon;
+    //              dialogVisible = true;
+    //            
+    //              printf("%s(7): Encounter_Pokemon=%d\n", __func__, Encounter_Pokemon);
+    //              return;
+    //        }
+    //        else {
+    //            // QGraphicsPixmapItem box = *pixmapItem;
+    //            hideDialog(); return;
+    //            //currentScene->removeItem(lab_ball);
+    //            //Pokeball_Mons.removeOne(lab_ball);
+    //            //delete lab_ball;
+    //        }
+    //        //openYellowBox(box);
+    //        //return;
+    //    }
+    //    entrycounter++;
+    //}
 }
 
 void Game::checkInteractions_battle() {
