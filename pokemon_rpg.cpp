@@ -183,12 +183,6 @@ void Game::keyPressEvent(QKeyEvent* event) {
     else if (currentSceneName == "laboratory") {
         if (event->key() == Qt::Key_Escape  && (!bagMenuVisible) && (!dialogVisible)) {
             setPlayerbacktotown_lab();
-          //  if (player->x_town < 715) { player->x = 700; player->y = 810; }     //force the player position after switch to town
-          //  else if (player->x_town >= 750) { player->x = 770; player->y = 810; }//force the player position after switch to town
-          //  else { player->x = 720; player->y = 830; }//force the player position after switch to town
-
-          //  player->x = player->x_town;
-          //  player->y = player->y_town;
             switchScene("town");
         }
         else if (bagMenuVisible) {
@@ -290,11 +284,9 @@ void Game::mousePressEvent(QMouseEvent* event) {
 
         hideYesButton();
     }
-    else  if (bagRect_0.contains(scenePos) && bagMenuVisible) {
+    else if (bagRect_0.contains(scenePos) && bagMenuVisible) {
         cursorIndex = 10;
         selectItem  = 0;
-        //updateCursorPosition();
-        //selectOption();
         printf("%s(): item 0 being selected!\n",__func__);
         showYesButton();
     }
@@ -493,8 +485,6 @@ void Game::mousePressEvent(QMouseEvent* event) {
      }
 
     return;
-
-//    updatePlayerPosition_battle();
 
     QWidget::mousePressEvent(event);
 }
